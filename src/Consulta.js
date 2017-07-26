@@ -1,9 +1,10 @@
 class Consulta {
-    constructor(paciente, procedimentos, particular, retorno) {
+    constructor(paciente, procedimentos, particular, retorno, data) {
         this._paciente = paciente;
         this._procedimentos = procedimentos;
         this._particular = particular;
         this._retorno = retorno;
+        this._data = data;
     }
 
     preco() {
@@ -20,5 +21,25 @@ class Consulta {
         if (this._particular) precoFinal *= 2;
 
         return precoFinal;
+    }
+
+    get paciente() {
+        return this._paciente;
+    }
+
+    get procedimentos() {
+        return this._procedimentos;
+    }
+
+    get ehParticular() {
+        return this._particular;
+    }
+
+    get ehRetorno() {
+        return this._retorno;
+    }
+
+    get data() {
+        return this._data;
     }
 }
